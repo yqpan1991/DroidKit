@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="dg_larc_loading_id"/>
+    <item type="id" name="dg_larc_empty_id"/>
+    <item type="id" name="dg_larc_error_id"/>
+    <item type="id" name="dg_larc_content_id"/>
+</resources>

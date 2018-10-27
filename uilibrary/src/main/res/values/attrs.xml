@@ -9,4 +9,17 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="LoadingAndResultContainer">
+        <attr name="loading_behavior" format="reference"/>
+        <attr name="content_behavior" format="reference"/>
+        <attr name="error_behavior" format="reference"/>
+        <attr name="empty_behavior" format="reference"/>
+        <attr name="default_status_v2" format="enum">
+            <enum name="loading" value="0"/>
+            <enum name="content" value="1"/>
+            <enum name="error" value="2"/>
+            <enum name="empty" value="3"/>
+        </attr>
+    </declare-styleable>
+
 </resources>
