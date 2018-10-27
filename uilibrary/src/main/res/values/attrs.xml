@@ -1,0 +1,12 @@
+<resources>
+
+    <declare-styleable name="AspectRatioImageView">
+        <attr name="heightWidthRatio" format="float" />
+        <attr name="heightWidthRatioEnabled" format="boolean" />
+        <attr name="dominantMeasurement">
+            <enum name="width" value="0" />
+            <enum name="height" value="1" />
+        </attr>
+    </declare-styleable>
+
+</resources>
