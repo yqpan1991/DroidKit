@@ -4,6 +4,7 @@
     <string name="edus_empty_default">空空如也</string>
     <string name="edus_empty_error">出错啦</string>
     <string name="edus_empty_error_retry">重试</string>
+    <string name="edus_common_result_text">common result</string>
 
     <string name="edus_larcv_common_result_behavior" translatable="false">com.apollo.edus.uilibrary.widget.loadingandresult.CommonResultListBehavior</string>
     <string name="edus_larcv_common_empty_behavior" translatable="false">com.apollo.edus.uilibrary.widget.loadingandresult.EmptyViewDefaultBehavior</string>

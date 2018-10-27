@@ -129,13 +129,13 @@ public class LoadingAndResultContainer extends FrameLayout {
             return;
         }
         if(displayStatus == DISPLAY_STATUS.LOADING){
-            showLoading();
+            showLoading(isForce);
         }else if(displayStatus == DISPLAY_STATUS.COMMON_RESULT){
-            showCommonResult();
+            showCommonResult(isForce);
         }else if(displayStatus == DISPLAY_STATUS.EMPTY){
-            showEmpty();
+            showEmpty(isForce);
         }else if(displayStatus == DISPLAY_STATUS.ERROR){
-            showError();
+            showError(isForce);
         }
     }
 
@@ -261,7 +261,11 @@ public class LoadingAndResultContainer extends FrameLayout {
     }
 
     public void showLoading(){
-        if(isSameStatus(DISPLAY_STATUS.LOADING)){
+        showLoading(false);
+    }
+
+    private void showLoading(boolean forceUpdate){
+        if(isSameStatus(DISPLAY_STATUS.LOADING) && !forceUpdate){
             return;
         }
         mDisplayStatus = DISPLAY_STATUS.LOADING;
@@ -276,7 +280,11 @@ public class LoadingAndResultContainer extends FrameLayout {
     }
 
     public void showCommonResult(){
-        if(isSameStatus(DISPLAY_STATUS.COMMON_RESULT)){
+        showCommonResult(false);
+    }
+
+    private void showCommonResult(boolean forceUpdate){
+        if(isSameStatus(DISPLAY_STATUS.COMMON_RESULT) && !forceUpdate){
             return;
         }
         mDisplayStatus = DISPLAY_STATUS.COMMON_RESULT;
@@ -287,7 +295,11 @@ public class LoadingAndResultContainer extends FrameLayout {
     }
 
     public void showEmpty(){
-        if(isSameStatus(DISPLAY_STATUS.EMPTY)){
+        showEmpty(false);
+    }
+
+    private void showEmpty(boolean forceUpdate){
+        if(isSameStatus(DISPLAY_STATUS.EMPTY) && !forceUpdate){
             return;
         }
         mDisplayStatus = DISPLAY_STATUS.EMPTY;
@@ -298,7 +310,11 @@ public class LoadingAndResultContainer extends FrameLayout {
     }
 
     public void showError(){
-        if(isSameStatus(DISPLAY_STATUS.ERROR)){
+        showError(false);
+    }
+
+    private void showError(boolean forceUpdate){
+        if(isSameStatus(DISPLAY_STATUS.ERROR) && !forceUpdate){
             return;
         }
         mDisplayStatus = DISPLAY_STATUS.ERROR;
