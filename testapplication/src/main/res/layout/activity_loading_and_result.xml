@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.apollo.edus.uilibrary.widget.loadingandresult.LoadingAndResultContainer xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    app:loading_behavior="@string/edus_larcv_common_loading_behavior"
-    app:content_behavior="@string/edus_larcv_common_result_behavior"
-    app:error_behavior="@string/edus_larcv_common_error_behavior"
-    app:empty_behavior="@string/edus_larcv_common_empty_behavior"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <RadioGroup
+        android:id="@+id/rg_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:context=".MainActivity">
 
-</com.apollo.edus.uilibrary.widget.loadingandresult.LoadingAndResultContainer>
+        <RadioButton
+            android:id="@+id/bt_behavior"
+            android:text="by behavior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <RadioButton
+            android:id="@+id/bt_subview"
+            android:text="by behavior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <RadioButton
+            android:id="@+id/bt_complex"
+            android:text="by behavior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/fl_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+</LinearLayout>
