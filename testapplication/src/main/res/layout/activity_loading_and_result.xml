@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.apollo.edus.uilibrary.widget.loadingandresult.LoadingAndResultContainer xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:loading_behavior="@string/edus_larcv_common_loading_behavior"
+    app:content_behavior="@string/edus_larcv_common_result_behavior"
+    app:error_behavior="@string/edus_larcv_common_error_behavior"
+    app:empty_behavior="@string/edus_larcv_common_empty_behavior"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+</com.apollo.edus.uilibrary.widget.loadingandresult.LoadingAndResultContainer>
