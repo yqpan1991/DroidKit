@@ -1,1 +1,1 @@
-include ':uilibrary', ':testapplication'
+include ':uilibrary'
