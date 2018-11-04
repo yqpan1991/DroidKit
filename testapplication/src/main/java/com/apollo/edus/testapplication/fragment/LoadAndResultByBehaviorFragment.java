@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.apollo.edus.biz.aop.AopImpl;
+import com.apollo.edus.biz.aop.Demo;
+import com.apollo.edus.biz.aop.Listener;
 import com.apollo.edus.testapplication.R;
 import com.apollo.edus.uilibrary.widget.loadingandresult.LoadingAndResultContainer;
 
@@ -47,7 +50,18 @@ public class LoadAndResultByBehaviorFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         handleLoadData();
+        Demo.getInstance().registerListener(AopImpl.getInstance().makeFragmentAop(this, new Listener() {
+            @Override
+            public void onSuccess() {
 
+            }
+        }));
+        /*Demo.getInstance().registerListener( new Listener() {
+            @Override
+            public void onSuccess() {
+
+            }
+        });*/
     }
 
     private void handleLoadData(){

@@ -6,6 +6,9 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioGroup;
 
+import com.apollo.edus.biz.aop.AopImpl;
+import com.apollo.edus.biz.aop.Demo;
+import com.apollo.edus.biz.aop.Listener;
 import com.apollo.edus.testapplication.fragment.LoadAndResultByBehaviorFragment;
 import com.apollo.edus.testapplication.fragment.LoadAndResultByMixFragment;
 import com.apollo.edus.testapplication.fragment.LoadAndResultByViewFragment;
@@ -16,6 +19,7 @@ public class LoadingAndResultActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading_and_result);
+
         initView();
         initListener();
         initData();
@@ -29,19 +33,21 @@ public class LoadingAndResultActivity extends AppCompatActivity {
     }
 
     private void initListener() {
-        mRgSelector.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if(i == R.id.bt_behavior){
-                    showFragment(LoadAndResultByBehaviorFragment.class);
-                }else if(i == R.id.bt_subview){
-                    showFragment(LoadAndResultByViewFragment.class);
-                }else if(i == R.id.bt_complex){
-                    showFragment(LoadAndResultByMixFragment.class);
-                }
-            }
-        });
+        mRgSelector.setOnCheckedChangeListener(mOnCheckedChangedListener);
     }
+
+    private RadioGroup.OnCheckedChangeListener mOnCheckedChangedListener = new RadioGroup.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if(i == R.id.bt_behavior){
+                showFragment(LoadAndResultByBehaviorFragment.class);
+            }else if(i == R.id.bt_subview){
+                showFragment(LoadAndResultByViewFragment.class);
+            }else if(i == R.id.bt_complex){
+                showFragment(LoadAndResultByMixFragment.class);
+            }
+        }
+    };
 
 
     private void initData() {
@@ -61,5 +67,9 @@ public class LoadingAndResultActivity extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    protected void onDestroy() {
+        mRgSelector.setOnCheckedChangeListener(null);
+        super.onDestroy();
+    }
 }
