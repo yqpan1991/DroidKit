@@ -55,7 +55,7 @@ public class AspectRatioImageView extends ImageView {
         if(heightWidthRatio == 0){
             return;
         }else{
-          newWidth = (int) (newHeight * heightWidthRatio);
+          newWidth = (int) (newHeight * 1.0 / heightWidthRatio);
         }
         break;
 
